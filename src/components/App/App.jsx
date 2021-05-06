@@ -3,7 +3,7 @@ import axios from 'axios';
 import './App.css';
 import SelectPizza from '../SelectPizza/SelectPizza';
 import PizzaCheckout from '../PizzaCheckout/PizzaCheckout';
-
+import {useDispatch} from 'react-redux';
 
 function App() {
 
