@@ -25,12 +25,12 @@ const checkoutReducer = (state = [], action) => {
     return state
 }
 
-const customerInfoReducer = (state = [], action) => {
-    if(action.payload === 'SUBMIT_INFO') {
-    }
 
-    return state
-}
+const customerInfoReducer = (state = [{customer_name:'default name'},{street_address:'default address'},{city:'default city'},{zip:'default zip'},{type:'default type'},{total:'default total'},{time:'default time'}], action) => {
+    if(action.payload === 'SUBMIT_INFO'){
+        return [...state, action.payload];
+    }
+return state;
 
 const storeInstance = createStore(
     combineReducers({

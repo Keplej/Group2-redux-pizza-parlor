@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css';
 import SelectPizza from '../SelectPizza/SelectPizza';
 import PizzaCheckout from '../PizzaCheckout/PizzaCheckout';
+import OrderForm from '../OrderForm/OrderForm'
 import {useDispatch} from 'react-redux';
 
 function App() {
@@ -39,7 +40,7 @@ function App() {
 
 
       <PizzaCheckout />
-  
+      <OrderForm />
     </div>
   );
 }
