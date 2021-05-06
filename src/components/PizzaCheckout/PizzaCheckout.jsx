@@ -7,8 +7,36 @@ function PizzaCheckout() {
 
     //reducer
     const checkoutList = useSelector(store => store.checkoutReducer)
-    const customerList = useSelector(store => store.customerListReducer)
+    const customerList = useSelector(store => store.customerInfoReducer)
 
+    const checkoutPizza = () => {
+
+        axios({
+            method: 'POST',
+            url: '/api/order', 
+            data: { 
+
+                customer_name: customerList.customer_name,
+                street_address: customerList.street_address,
+                city: customerList.city,
+                zip: customerList.zip,
+                type: customerList.type,
+                total: customerList.total,
+                pizzas: [{
+                    id: checkoutList.id,
+                    quantity: 1  
+                }]  
+            }
+        })
+        .then(response => {
+            console.log('You checkout out:', response);
+            history.push('/customerInfo');
+        })
+        .catch(error => {
+            console.log('Something went wrong on checkout:', error);
+            alert('Error checking out.')
+        })
+    }
 
 
 
@@ -36,8 +64,8 @@ function PizzaCheckout() {
                     }
                 </tr>
             </tbody>
-            <button onClick={checkoutPizza}>Checkout</button>
         </table>
+        <button onClick={checkoutPizza}>Checkout</button>
         </>
 
     );

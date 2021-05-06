@@ -22,11 +22,14 @@ const checkoutReducer = (state = [], action) => {
     } else if (action.type === 'CLEAR') {
         return state
     }
+    return state
 }
 
 const customerInfoReducer = (state = [], action) => {
-    if(action.payload === 'SUBMIT_INFO')
+    if(action.payload === 'SUBMIT_INFO') {
+    }
 
+    return state
 }
 
 const storeInstance = createStore(
