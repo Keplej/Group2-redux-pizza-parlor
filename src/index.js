@@ -15,7 +15,13 @@ const pizzaReducer = (state=[], action) => {
 }
 
 const checkoutReducer = (state = [], action) => {
-
+    if (action.type === 'ADD') {
+        return [...state, action.payload]
+    } else if (action.type === 'REMOVE') {
+        return [...state, action.payload]
+    } else if (action.type === 'CLEAR') {
+        return state
+    }
 }
 
 const customerInfoReducer = (state = [], action) => {
