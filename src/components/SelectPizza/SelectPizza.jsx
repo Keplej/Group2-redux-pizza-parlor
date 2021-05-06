@@ -37,19 +37,12 @@ function SelectPizza() {
                         <p>{pizza.name}</p>
                         <p>{pizza.description}</p>
                         <p>{pizza.price}</p>
-                        <p>{pizza.name}</p>
                         <button onClick={(event) => addPizza(pizza.id)}>Add</button>
                         <button onClick={(event) => removePizza(pizza.id)}>Remove</button>
                         </div>
             })}
             <div><button className="next" onClick={handleNext}>Next</button></div>
         </>
-
-    
-    return (
-        
-        
-
     )
 }
 

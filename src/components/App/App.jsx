@@ -32,13 +32,23 @@ function App() {
       <header className='App-header'>
         <h1 className='App-title'>Prime Pizza</h1>
       </header>
+      <Router >
+        <Route path="/SelectPizza">
+          <SelectPizza />
+        </Route>
+        <Route path="/PizzaCheckout">
+          <PizzaCheckout />
+        </Route>
+        <Route path="/PizzaCheckout">
+          <PizzaCheckout />
+        </Route>
+      </Router>
       
-      <SelectPizza />
       <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p>
 
 
-      <PizzaCheckout />
+      
   
     </div>
   );
