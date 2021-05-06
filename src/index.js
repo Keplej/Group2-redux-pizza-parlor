@@ -31,6 +31,7 @@ const customerInfoReducer = (state = [{customer_name:'default name'},{street_add
         return [...state, action.payload];
     }
 return state;
+}
 
 const storeInstance = createStore(
     combineReducers({
