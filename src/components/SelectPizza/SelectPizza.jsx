@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 
 function SelectPizza() {
     
+
     const pizzaList = useSelector(store => store.pizzaReducer);
     console.log(pizzaList);
 
@@ -43,6 +44,12 @@ function SelectPizza() {
             })}
             <div><button className="next" onClick={handleNext}>Next</button></div>
         </>
+
+    
+    return (
+        
+        
+
     )
 }
 

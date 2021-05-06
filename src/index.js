@@ -4,6 +4,8 @@ import './index.css';
 import App from './components/App/App';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import logger from 'redux-logger';
+
 
 const pizzaReducer = (state=[], action) => {
     if (action.type === 'GET_PIZZA_LIST') {
@@ -35,4 +37,4 @@ const storeInstance = createStore(
     applyMiddleware(logger),
 )
 
-ReactDOM.render(<Provider><App /></Provider>, document.getElementById('root'));
+ReactDOM.render(<Provider store={storeInstance}><App /></Provider>, document.getElementById('root'));
