@@ -15,6 +15,7 @@ const checkoutReducer = (state = [], action) => {
 }
 
 const customerInfoReducer = (state = [], action) => {
+    if(action.payload === 'SUBMIT_INFO')
 
 }
 
