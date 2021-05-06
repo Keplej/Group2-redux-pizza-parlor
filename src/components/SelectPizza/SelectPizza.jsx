@@ -22,8 +22,8 @@ function SelectPizza() {
       }
   
     const handleNext = () => {
-        alert('You are headed to')
-        history.push('/customerInfo');
+        alert('Mmmmm Pizzzza. But first, we need your info!')
+        history.push('/OrderForm');
     }
 
 

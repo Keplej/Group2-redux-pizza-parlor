@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css';
 import SelectPizza from '../SelectPizza/SelectPizza';
 import PizzaCheckout from '../PizzaCheckout/PizzaCheckout';
+import OrderForm from '../OrderForm/OrderForm'
 import {useDispatch} from 'react-redux';
 
 function App() {
@@ -33,23 +34,22 @@ function App() {
         <h1 className='App-title'>Prime Pizza</h1>
       </header>
       <Router >
-        <Route path="/SelectPizza">
+        <Route path="/">
           <SelectPizza />
         </Route>
-        <Route path="/PizzaCheckout">
-          <PizzaCheckout />
+        <Route path="/OrderForm">
+          <OrderForm />
         </Route>
         <Route path="/PizzaCheckout">
           <PizzaCheckout />
+        </Route>
+        <Route path="/admin">
+          <Admin />
         </Route>
       </Router>
       
       <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p>
-
-
-      
-  
     </div>
   );
 }
