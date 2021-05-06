@@ -1,4 +1,5 @@
 import {useSelector} from 'react-redux';
+import axios from 'axios'
 
 
 
@@ -6,11 +7,19 @@ function PizzaCheckout() {
 
     //reducer
     const checkoutList = useSelector(store => store.checkoutReducer)
+    const customerList = useSelector(store => store.customerListReducer)
+
+
 
 
 
     return(
         <>
+        {customerList.map(customer => {
+                    return (<p>{customer.name}</p>)
+                            (<p>{customer.address}</p>)
+                    })
+                    }
         <table>
             <thead>
                 <tr>
@@ -20,11 +29,14 @@ function PizzaCheckout() {
             </thead>
             <tbody>
                 <tr>
-                    <td>Pizza type</td>
-                    <td>Pizza Cost</td>
+                    {checkoutList.map(pizza => {
+                        return (<td>{pizza.name}</td>)
+                                (<td>{pizza.price}</td>)
+                    })
+                    }
                 </tr>
             </tbody>
-            <button>Checkout</button>
+            <button onClick={checkoutPizza}>Checkout</button>
         </table>
         </>
 
