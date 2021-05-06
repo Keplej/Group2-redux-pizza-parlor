@@ -1,11 +1,9 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
-<<<<<<< HEAD
 import SelectPizza from '../SelectPizza/SelectPizza';
-=======
 import PizzaCheckout from '../PizzaCheckout/PizzaCheckout';
->>>>>>> 36e0efce30e16b12b6041a4f3a1810156602f813
+
 
 function App() {
 
