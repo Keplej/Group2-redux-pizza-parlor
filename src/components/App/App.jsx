@@ -5,8 +5,10 @@ import SelectPizza from '../SelectPizza/SelectPizza';
 import PizzaCheckout from '../PizzaCheckout/PizzaCheckout';
 import OrderForm from '../OrderForm/OrderForm';
 import Admin from '../Admin/Admin';
+import Header from '../Header/Header'
 import {useDispatch} from 'react-redux';
 import { HashRouter as Router, Route } from "react-router-dom";
+
 
 
 function App() {
@@ -33,9 +35,10 @@ function App() {
 
   return (
     <div className='App'>
-      <header className='App-header'>
-        <h1 className='App-title'>Prime Pizza</h1>
-      </header>
+    {/* //   <header className='App-header'>
+    //     <h1 className='App-title'>Prime Pizza</h1>
+    //   </header> */}
+      <Header />
       <Router >
         <Route path="/" exact>
           <SelectPizza />
@@ -51,8 +54,7 @@ function App() {
         </Route>
       </Router>
       
-      <img src='images/pizza_photo.png' />
-      <p>Pizza is great.</p>
+      
     </div>
   );
 }

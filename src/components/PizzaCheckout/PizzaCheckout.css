@@ -1,0 +1,15 @@
+.checkoutList table, tr, td {
+    border: 1px solid black;
+    width: 50%;
+    margin-top: 5%;
+    background-color: salmon;
+}
+
+.checkoutBtn {
+    margin: 5%;
+}
+
+.customerInfo p {
+    text-align: left;
+    font-weight: bolder;
+}
