@@ -1,0 +1,16 @@
+.card {
+    align-items: center;
+    padding: 1rem;
+    font-family: sans-serif;
+}
+
+.button {
+    padding: .5px;
+}
+
+.next {
+    padding: 10px;
+    background-color: lightblue;
+    border: solid black 2px;
+    border-radius: 4px;
+}

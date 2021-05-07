@@ -35,18 +35,19 @@ const customerInfoReducer = (state = {}, action) => {
 return state;
 }
 
-// const adminReducer = (state = [], action) => {
-//     if(action.type === 'GET_ADMIN'){
-//         return action.payload
-//     }
-//     return state
-// }
+const adminReducer = (state = [], action) => {
+    if(action.type === 'GET_ADMIN'){
+        return action.payload
+    }
+    return state
+}
 
 const storeInstance = createStore(
     combineReducers({
         pizzaReducer,
         checkoutReducer,
-        customerInfoReducer
+        customerInfoReducer,
+        adminReducer,
     }),
     applyMiddleware(logger),
 )
