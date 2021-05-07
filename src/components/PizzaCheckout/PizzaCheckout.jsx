@@ -30,7 +30,7 @@ function PizzaCheckout() {
         })
         .then(response => {
             console.log('You checkout out:', response);
-            history.push('/customerInfo');
+            history.push('/selectPizza');
         })
         .catch(error => {
             console.log('Something went wrong on checkout:', error);
