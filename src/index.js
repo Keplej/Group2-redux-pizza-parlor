@@ -29,6 +29,13 @@ const customerInfoReducer = (state = [], action) => {
 
 }
 
+// const adminReducer = (state = [], action) => {
+//     if(action.type === 'GET_ADMIN'){
+//         return action.payload
+//     }
+//     return state
+// }
+
 const storeInstance = createStore(
     combineReducers({
         pizzaReducer,

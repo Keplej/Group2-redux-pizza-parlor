@@ -1,6 +1,27 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 
 function Admin() {
 
+    const dispatch = useDispatch();
+
+    // const [adminOrders, setAdminOrders] = useState([]);
+
+    useEffect(() => {
+        // GET
+        getAdmin();
+    })
+
+    const getAdmin = () => {
+        axios.get('/api/order')
+        .then(response => {
+            dispatch({type: 'GET_ADMIN'})
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+    }
 
 
     return(
@@ -16,6 +37,11 @@ function Admin() {
             </table>
             <tbody>
                 {/* THIS IS WHERE THE INFO WILL SHOW UP */}
+                {adminReducer.map((item, i) =>
+                    <div>
+                        <td></td>
+                    </div>
+                )}
             </tbody>
         </div>
     )
