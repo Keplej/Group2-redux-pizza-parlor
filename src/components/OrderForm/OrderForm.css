@@ -1,0 +1,15 @@
+.orderForm {
+    display: inline-block;
+    flex-direction: row;
+}
+
+.flex {
+    display: inline-block;
+    flex-direction: row;
+    
+}
+
+.flexType{
+    display: flex;
+    justify-content: flex-end;
+}
