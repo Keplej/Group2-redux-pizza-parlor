@@ -1,6 +1,7 @@
 import {useDispatch, useSelector} from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import {useState} from 'react';
+import './SelectPizza.css';
 
 
 function SelectPizza() {
@@ -13,18 +14,10 @@ function SelectPizza() {
 
     const dispatch = useDispatch();
     const history = useHistory();
-  
-    // const addPizza = (event) => {
-    // //   dispatch( {type: 'ADD', payload: pizza});
-    //   console.log();
-
-    // //   history.push('/');
-    // }
 
     const removePizza = (event) => {
         dispatch( {type: 'REMOVE', payload: event.id});
         console.log(event);
-        // history.push('/');
       }
   
     const handleNext = () => {
@@ -42,7 +35,7 @@ function SelectPizza() {
         </div>
             {pizzaList.map(pizza => {
                 return <div className="card" key={pizza.id}>
-                        <p>{pizza.name}</p>
+                        <p><b>{pizza.name}</b></p>
                         <p>{pizza.description}</p>
                         <p>{pizza.price}</p>
                         <button onClick={(event) => setPizza(pizza)}>Add</button>
