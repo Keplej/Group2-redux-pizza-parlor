@@ -26,7 +26,7 @@ const checkoutReducer = (state = [], action) => {
 }
 
 
-const customerInfoReducer = (state = [{customer_name:'default name'},{street_address:'default address'},{city:'default city'},{zip:'default zip'},{type:'default type'},{total:'default total'},{time:'default time'}], action) => {
+const customerInfoReducer = (state = [], action) => {
     if(action.payload === 'SUBMIT_INFO'){
         return [...state, action.payload];
     }
