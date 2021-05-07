@@ -1,5 +1,7 @@
 import {useSelector} from 'react-redux';
+import { useState } from 'react';
 import axios from 'axios'
+import { useHistory } from 'react-router-dom';
 
 
 
@@ -9,7 +11,13 @@ function PizzaCheckout() {
     const checkoutList = useSelector(store => store.checkoutReducer)
     const customerList = useSelector(store => store.customerInfoReducer)
 
+    const history = useHistory();
+
+
+    
+
     const checkoutPizza = () => {
+
 
         axios({
             method: 'POST',
@@ -21,16 +29,16 @@ function PizzaCheckout() {
                 city: customerList.city,
                 zip: customerList.zip,
                 type: customerList.type,
-                total: customerList.total,
+                total: checkoutList.price,
                 pizzas: [{
                     id: checkoutList.id,
                     quantity: 1  
                 }]  
+
             }
         })
         .then(response => {
             console.log('You checkout out:', response);
-
             alert(`'Za is on the way! DOPE WOOT!`)
             history.push('/');
 
@@ -46,11 +54,9 @@ function PizzaCheckout() {
 
     return(
         <>
-        {customerList.map(customer => {
-                    return (<p>{customer.customer_name}</p>)
-                            (<p>{customer.customer_address}</p>)
-                    })
-                    }
+        <p>{customerList.customer_name}</p>
+        <p>{customerList.street_address}</p>
+        <p>{customerList.city}, {customerList.zip}</p>
         <table>
             <thead>
                 <tr>
@@ -60,11 +66,8 @@ function PizzaCheckout() {
             </thead>
             <tbody>
                 <tr>
-                    {checkoutList.map(pizza => {
-                        return (<td>{pizza.name}</td>)
-                                (<td>{pizza.price}</td>)
-                    })
-                    }
+                    <td>{checkoutList.name}</td> 
+                    <td>{checkoutList.price}</td> 
                 </tr>
             </tbody>
         </table>
@@ -77,3 +80,14 @@ function PizzaCheckout() {
 }
 
 export default PizzaCheckout
+
+// {customerList.map((customer, i) => 
+//     <p key={i}>{customer.customer_name} {customer.street_address} {customer.city} {customer.zip}</p>)
+           
+// }
+
+
+// {checkoutList.map((pizza, i) => 
+//     <td>{pizza.name} {pizza.price}</td>
+// )
+// }

@@ -1,8 +1,11 @@
 import {useDispatch, useSelector} from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import {useState} from 'react';
 
 
 function SelectPizza() {
+
+    const [pizza, setPizza] = useState('')
     
 
     const pizzaList = useSelector(store => store.pizzaReducer);
@@ -11,17 +14,22 @@ function SelectPizza() {
     const dispatch = useDispatch();
     const history = useHistory();
   
-    const addPizza = (event) => {
-      dispatch( {type: 'ADD', payload: [event.id, event.price]});
-    //   history.push('/');
-    }
+    // const addPizza = (event) => {
+    // //   dispatch( {type: 'ADD', payload: pizza});
+    //   console.log();
+
+    // //   history.push('/');
+    // }
 
     const removePizza = (event) => {
         dispatch( {type: 'REMOVE', payload: event.id});
+        console.log(event);
         // history.push('/');
       }
   
     const handleNext = () => {
+        console.log(pizza)
+        dispatch( {type: 'ADD', payload: pizza});
         alert('Mmmmm Pizzzza... But first, we need your info!')
         history.push('/OrderForm');
     }
@@ -37,7 +45,7 @@ function SelectPizza() {
                         <p>{pizza.name}</p>
                         <p>{pizza.description}</p>
                         <p>{pizza.price}</p>
-                        <button onClick={(event) => addPizza(pizza.id)}>Add</button>
+                        <button onClick={(event) => setPizza(pizza)}>Add</button>
                         <button onClick={(event) => removePizza(pizza.id)}>Remove</button>
                         </div>
             })}

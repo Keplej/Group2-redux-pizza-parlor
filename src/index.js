@@ -14,21 +14,23 @@ const pizzaReducer = (state=[], action) => {
     return state
 }
 
-const checkoutReducer = (state = [], action) => {
+const checkoutReducer = (state = {}, action) => {
     if (action.type === 'ADD') {
-        return [...state, action.payload]
+        return action.payload
     } else if (action.type === 'REMOVE') {
-        return [...state, action.payload]
+        return action.payload
     } else if (action.type === 'CLEAR') {
         return state
     }
-    return state
+    return state;
 }
 
 
-const customerInfoReducer = (state = [], action) => {
-    if(action.payload === 'SUBMIT_INFO'){
-        return [...state, action.payload];
+const customerInfoReducer = (state = {}, action) => {
+    if(action.type === 'SUBMIT_INFO'){
+        console.log(action.payload);
+        
+        return action.payload;
     }
 return state;
 }

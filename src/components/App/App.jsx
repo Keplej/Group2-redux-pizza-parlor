@@ -3,7 +3,8 @@ import axios from 'axios';
 import './App.css';
 import SelectPizza from '../SelectPizza/SelectPizza';
 import PizzaCheckout from '../PizzaCheckout/PizzaCheckout';
-import OrderForm from '../OrderForm/OrderForm'
+import OrderForm from '../OrderForm/OrderForm';
+import Admin from '../Admin/Admin';
 import {useDispatch} from 'react-redux';
 import { HashRouter as Router, Route } from "react-router-dom";
 
@@ -36,7 +37,7 @@ function App() {
         <h1 className='App-title'>Prime Pizza</h1>
       </header>
       <Router >
-        <Route path="/">
+        <Route path="/" exact>
           <SelectPizza />
         </Route>
         <Route path="/OrderForm">

@@ -1,10 +1,12 @@
 import {useDispatch} from 'react-redux';
 import {useState} from 'react'
+import { useHistory } from 'react-router-dom';
 
 
 function OrderForm() {
     // Dispatch to capture values from handle submit and push them into customerInfoReducer State
-    dispatch = useDispatch();
+    const dispatch = useDispatch();
+    const history = useHistory();
     // string states to obtain values on submit for handleSubmit function
     const [customerName, setCustomerName] = useState('');
     const [streetAddress, setStreetAddress] = useState('');
@@ -18,6 +20,7 @@ function OrderForm() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        console.log(customerName, streetAddress, city, zip, type);
         dispatch({type: 'SUBMIT_INFO', payload: {
             customer_name: customerName,
             street_address: streetAddress,
@@ -31,6 +34,8 @@ function OrderForm() {
         setCity('');
         setZip('');
         setType('');
+
+        handleNext();
       } // END handleSubmit
 
       const handleNext = () => {
@@ -52,18 +57,26 @@ function OrderForm() {
                 <input placeholder="Zip" type="text" value={zip} onChange={(event) => setZip(event.target.value)}/>
                 
                 
-                <input type="radio" value={type} name="Pickup" onChange={(event) => setType(event.target.value)}/> 
+                <input type="radio" value={type} name="Pickup" onChange={(event) => setType("Pickup")}/> Pickup
                 
-                <input type="radio" value={type} name="Delivery" onChange={(event) => setType(event.target.value)}/> 
+                <input type="radio" value={type} name="Delivery" onChange={(event) => setType("Delivery")}/> Delivery
                 
                 
                 <button className="next" type="submit">Next</button>
 
 
             </form>
-            <div><button className="next" onClick={handleNext}>Next</button></div>
         </>
     )
 }
 
 export default OrderForm; 
+
+
+// {
+//     customer_name: customerName,
+//     street_address: streetAddress,
+//     city: city,
+//     zip: zip,
+//     type: type
+// }
