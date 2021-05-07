@@ -30,7 +30,7 @@ function PizzaCheckout() {
         })
         .then(response => {
             console.log('You checkout out:', response);
-            alert('Your order has successfully been placed! DOPE WOOT!')
+            alert(`'Za is on the way! DOPE WOOT!`)
             history.push('/');
         })
         .catch(error => {
