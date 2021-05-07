@@ -23,6 +23,11 @@ function OrderForm() {
         setPlane('');
       }
 
+      const handleNext = () => {
+        alert('Are you getting hungry? One more step: Checkout')
+        history.push('/PizzaCheckout');
+    }
+
     return (
         <>
             <form>
@@ -32,8 +37,8 @@ function OrderForm() {
                 <input placeholder="Zip" type="text" value={zip} onChange={(event) => setZip(event.target.value)}/>
                 <input type="radio" value={type} name="pickup" /> Pickup
                 <input type="radio" value={type} name="delivery" /> Delivery
-                <button className="next">Next</button>
             </form>
+            <div><button className="next" onClick={handleNext}>Next</button></div>
         </>
     )
 }
