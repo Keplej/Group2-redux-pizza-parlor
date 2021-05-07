@@ -35,7 +35,6 @@ function PizzaCheckout() {
 
            alert('Your order has successfully been placed! DOPE WOOT!')
             
-
         })
         .catch(error => {
             console.log('Something went wrong on checkout:', error);
@@ -49,8 +48,8 @@ function PizzaCheckout() {
     return(
         <>
         {customerList.map(customer => {
-                    return (<p>{customer.name}</p>)
-                            (<p>{customer.address}</p>)
+                    return (<p>{customer.customer_name}</p>)
+                            (<p>{customer.customer_address}</p>)
                     })
                     }
         <table>
