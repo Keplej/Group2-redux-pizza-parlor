@@ -2,6 +2,7 @@ import {useSelector} from 'react-redux';
 import { useState } from 'react';
 import axios from 'axios'
 import { useHistory } from 'react-router-dom';
+import '../PizzaCheckout/PizzaCheckout.css'
 
 
 
@@ -54,10 +55,13 @@ function PizzaCheckout() {
 
     return(
         <>
-        <p>{customerList.customer_name}</p>
-        <p>{customerList.street_address}</p>
-        <p>{customerList.city}, {customerList.zip}</p>
-        <table>
+        <div className="customerInfo">
+            <p>{customerList.customer_name}</p>
+            <p>{customerList.street_address}</p>
+            <p>{customerList.city}, {customerList.zip}</p>
+        </div>
+        <div className="checkoutList">
+        <table >
             <thead>
                 <tr>
                     <th>Name</th>
@@ -65,13 +69,14 @@ function PizzaCheckout() {
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr className="checkoutRow">
                     <td>{checkoutList.name}</td> 
                     <td>{checkoutList.price}</td> 
                 </tr>
             </tbody>
         </table>
-        <button onClick={checkoutPizza}>Checkout</button>
+        </div>
+        <button className="checkoutBtn" onClick={checkoutPizza}>Checkout</button>
         </>
 
     );
