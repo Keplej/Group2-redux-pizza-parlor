@@ -5,6 +5,7 @@ import SelectPizza from '../SelectPizza/SelectPizza';
 import PizzaCheckout from '../PizzaCheckout/PizzaCheckout';
 import OrderForm from '../OrderForm/OrderForm'
 import {useDispatch} from 'react-redux';
+import { HashRouter as Router, Route } from "react-router-dom";
 
 
 function App() {

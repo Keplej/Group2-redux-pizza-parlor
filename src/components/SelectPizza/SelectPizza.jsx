@@ -22,7 +22,7 @@ function SelectPizza() {
       }
   
     const handleNext = () => {
-        alert('Mmmmm Pizzzza. But first, we need your info!')
+        alert('Mmmmm Pizzzza... But first, we need your info!')
         history.push('/OrderForm');
     }
 
