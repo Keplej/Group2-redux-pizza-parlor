@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import './Admin.css';
 
 function Admin() {
 
@@ -12,7 +13,7 @@ function Admin() {
     useEffect(() => {
         // GET
         getAdmin();
-    })
+    }, [])
 
     const getAdmin = () => {
         axios.get('/api/order')
@@ -27,16 +28,17 @@ function Admin() {
 
 
     return(
-        <div>
+        <div className="adminTable">
             <h1>Admin</h1>
             <table>
-                <tr>
-                    <th>Name</th>
-                    <th>Time Order Placed</th>
-                    <th>Type</th>
-                    <th>Cost</th>
-                </tr>
-            </table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Time Order Placed</th>
+                        <th>Type</th>
+                        <th>Cost</th>
+                    </tr>
+                </thead>
             <tbody>
                 {adminSelector.map((item, i) =>
                     <tr key={i}>
@@ -47,6 +49,7 @@ function Admin() {
                     </tr>
                 )}
             </tbody>
+            </table>
         </div>
     )
 }

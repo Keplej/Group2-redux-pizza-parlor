@@ -1,0 +1,25 @@
+.adminTable h1{
+    color: cornflowerblue;
+}
+
+.adminTable th, td, tr {
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+    text-align: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.adminTable table {
+    border-collapse: collapse;
+   width: 100%;
+}
+
+.adminTable tr:nth-child(even){
+    background-color: #f2f2f2
+}
+
+.adminTable th {
+    background-color:cornflowerblue;
+    color: white;
+}
